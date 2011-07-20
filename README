@@ -1,5 +1,9 @@
 complete redesign/reimplementation from scratch of rbot plugins (contributed by community) http://rbot.noway.ratry.ru/
 
+rbot is a powerful IRC bot written in ruby similar to eggdrop. 
+Plugins can easily extend the functionallity of rbot, this
+website should create a community for people writing or intend
+to write plugins.
 
 Features
 ========
@@ -41,6 +45,7 @@ Notes:
 ======
 
 - GPLv3, englisch/multi-language, neues design
+- CodeStyle: tabs: expandtab shiftwidth=2 softtabstop=2
 - Development: github/ci-server die tests machen?/test-server(mit git push hook)/
 - wer kann aenderungen/neue versionen veroeffentlichen und wie (bsp.: update request durch andere nutzer vgl. github pullrequest)
   im alten system konnte das nur der plugin owner/ersteller (das sollte also das default sein) also auswahl beim erstellen?! ob andere leute versionen hochladen koennen oder nicht, und wenn ja dann nur moderiert vom autor)
