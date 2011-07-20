@@ -22,12 +22,14 @@ Have to:
 (neue features/usecases)
 - kommentare
 - ratings
+- rechte-management
+- login per oauth/github/openid
+- rbot-plugin fuer IRC (neue plugins etc.)
+- Follow plugins/authors (incl. email notification)
 
 Nice to have:
 -------------
 - markup fuer textfeldern
-- rechte-management
-- login per oauth/github/openid
 - user profile mit gravatar support, etc.
 - rss feeds
 - wiki/blog bereich fuer howtos
@@ -37,8 +39,6 @@ Nice to have:
 - bug ticket system (incl. mail notification) / feature requests
 - git repository von plugins
 - test cases fuer alles
-- rbot-plugin fuer IRC (neue plugins etc.)
-- Follow plugins/authors (incl. email notification)
 - Notification Center (Einstellen der Benachrichtigungen)
 
 Notes:
