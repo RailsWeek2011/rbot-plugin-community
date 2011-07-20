@@ -1,9 +1,15 @@
-complete redesign/reimplementation from scratch of rbot plugins (contributed by community) http://rbot.noway.ratry.ru/
+RBot Plugin Community/Repository
+================================
 
-rbot is a powerful IRC bot written in ruby similar to eggdrop. 
-Plugins can easily extend the functionallity of rbot, this
-website should create a community for people writing or intend
-to write plugins.
+RBot is a powerful IRC (Internet Relay Chat) Bot written in ruby. Similar 
+to eggdrop, plugins can be written that can easily extend the bot with 
+new features. There is a website where plugin authors can sign up and 
+upload their plugins:
+  http://rbot.noway.ratry.ru/ 
+
+This aims to be a replacement of the original site, a complete redesign/
+reimplementation, with new and improved features, to create a community,
+for people that use or write plugins and to motivate others.                  
 
 Features
 ========
