@@ -1,7 +1,11 @@
 complete redesign/reimplementation from scratch of rbot plugins (contributed by community) http://rbot.noway.ratry.ru/
+
+
 Features
 ========
-have to:
+
+Have to:
+--------
 (die alten features/usecases)
 - user sign up/in, profil, etc.
 - suche
@@ -10,10 +14,13 @@ have to:
 - versionen von plugins (datei upload) anlegen/aendern/loeschen
   [version, changelog]
 - about/faq
+
 (neue features/usecases)
 - kommentare
 - ratings
-nice to have:
+
+Nice to have:
+-------------
 - markup fuer textfeldern
 - rechte-management
 - login per oauth/github/openid
@@ -27,7 +34,11 @@ nice to have:
 - git repository von plugins
 - test cases fuer alles
 - rbot-plugin fuer IRC (neue plugins etc.)
-notes:
+
+
+Notes:
+======
+
 - GPLv3, englisch/multi-language, neues design
 - Development: github/ci-server die tests machen?/test-server(mit git push hook)/
 - wer kann aenderungen/neue versionen veroeffentlichen und wie (bsp.: update request durch andere nutzer vgl. github pullrequest)
