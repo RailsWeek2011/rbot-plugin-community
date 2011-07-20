@@ -34,7 +34,8 @@ Nice to have:
 - git repository von plugins
 - test cases fuer alles
 - rbot-plugin fuer IRC (neue plugins etc.)
-
+- Follow plugins/authors (incl. email notification)
+- Notification Center (Einstellen der Benachrichtigungen)
 
 Notes:
 ======
