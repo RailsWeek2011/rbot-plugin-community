@@ -51,4 +51,7 @@ RbotPluginCommunity::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  # Mailer configuration for Devise
+  config.action_mailer.default_url_options = { :host => 'rbot-plugins.sixserv.org' }
 end

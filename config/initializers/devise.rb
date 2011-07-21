@@ -6,15 +6,7 @@ Devise.setup do |config|
   config.mailer_sender = "info@sixserv.org"
 
   # Configure the class responsible to send e-mails.
-  # config.mailer = "Devise::Mailer"
-=begin
-  1. Setup default url options for your specific environment. Here is an
-     example of development environment:
-
-       config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-
-     This is a required Rails configurat
-=end
+  # config.mailer = "Devise::Mailer" # ??? shouldn't that use the action_mailer?
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
