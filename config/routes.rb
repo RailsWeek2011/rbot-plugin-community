@@ -1,4 +1,6 @@
 RbotPluginCommunity::Application.routes.draw do
+  resources :plugins
+
   devise_for :users
 
   # 2. Ensure you have defined root_url to *something* in your config/routes.rb.

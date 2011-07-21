@@ -10,7 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110721104356) do
+ActiveRecord::Schema.define(:version => 20110721133945) do
+
+  create_table "plugins", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.string   "repository"
+    t.text     "summary"
+    t.text     "description"
+    t.text     "installation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "plugins", ["user_id"], :name => "index_plugins_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

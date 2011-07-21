@@ -1,0 +1,33 @@
+<h1>Listing plugins</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>User</th>
+    <th>Repository</th>
+    <th>Summary</th>
+    <th>Description</th>
+    <th>Installation</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @plugins.each do |plugin| %>
+  <tr>
+    <td><%= plugin.name %></td>
+    <td><%= plugin.user %></td>
+    <td><%= plugin.repository %></td>
+    <td><%= plugin.summary %></td>
+    <td><%= plugin.description %></td>
+    <td><%= plugin.installation %></td>
+    <td><%= link_to 'Show', plugin %></td>
+    <td><%= link_to 'Edit', edit_plugin_path(plugin) %></td>
+    <td><%= link_to 'Destroy', plugin, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Plugin', new_plugin_path %>
