@@ -56,6 +56,19 @@ Notes:
 - wer kann aenderungen/neue versionen veroeffentlichen und wie (bsp.: update request durch andere nutzer vgl. github pullrequest)
   im alten system konnte das nur der plugin owner/ersteller (das sollte also das default sein) also auswahl beim erstellen?! ob andere leute versionen hochladen koennen oder nicht, und wenn ja dann nur moderiert vom autor)
 
+Models:
+=======
+
+more planning of this in doc/Database.png
+ 
+Plugin                 
+    name:string        
+    user:references    
+    repository:string  
+    summary:text       
+    description:text   
+    installation:text
+
 Installation (development)
 ============
 
@@ -65,4 +78,5 @@ rvm gemset create rbot-plugin-community
 git clone git@github.com:RailsWeek2011/rbot-plugin-community.git
 cd rbot-plugin-community/
 bundle install
+rake db:setup
 
