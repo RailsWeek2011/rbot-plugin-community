@@ -14,6 +14,9 @@ gem 'uglifier'
 
 gem 'jquery-rails'
 
+# use devise for user authentication
+gem 'devise'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
