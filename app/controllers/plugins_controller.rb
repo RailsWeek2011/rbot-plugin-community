@@ -17,6 +17,9 @@ class PluginsController < ApplicationController
   # GET /plugins/1.json
   def show
     @plugin = Plugin.find(params[:id])
+    @comment = Comment.new 
+
+    @comments = @plugin.comments
 
     respond_to do |format|
       format.html # show.html.erb
@@ -95,6 +98,7 @@ class PluginsController < ApplicationController
         format.html { redirect_to plugins_path, alert: 'You do not own this plugin!' }
         format.json { render json: {:status => :unauthorized } }
       end
+      # If a before filter renders or redirects, the action will not run.
     end
   end
 end
