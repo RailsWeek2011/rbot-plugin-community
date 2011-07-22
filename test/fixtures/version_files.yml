@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  plugin_version: 
+  file: MyString
+
+two:
+  plugin_version: 
+  file: MyString

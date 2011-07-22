@@ -3,7 +3,9 @@ RbotPluginCommunity::Application.routes.draw do
   root :to => 'plugins#index'
 
   resources :plugins do
-    resources :plugin_versions
+    resources :plugin_versions do
+      resources :version_files
+    end
     resources :comments
   end
 
