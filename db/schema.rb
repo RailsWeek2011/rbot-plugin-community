@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110722091213) do
+ActiveRecord::Schema.define(:version => 20110722100651) do
 
   create_table "comments", :force => true do |t|
     t.integer  "plugin_id"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(:version => 20110722091213) do
     t.string   "ip"
     t.string   "name"
     t.string   "email"
-    t.string   "content"
+    t.text     "content",    :limit => 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
