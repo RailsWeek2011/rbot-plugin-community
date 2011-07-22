@@ -4,6 +4,7 @@ RbotPluginCommunity::Application.routes.draw do
 
   resources :plugins do
     resources :plugin_versions
+    resources :comments
   end
 
   devise_for :users

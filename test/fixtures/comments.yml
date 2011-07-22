@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  plugin: 
+  user: 
+  ip: MyString
+  name: MyString
+  email: MyString
+  content: MyString
+
+two:
+  plugin: 
+  user: 
+  ip: MyString
+  name: MyString
+  email: MyString
+  content: MyString
