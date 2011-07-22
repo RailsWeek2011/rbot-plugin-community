@@ -1,5 +1,5 @@
 class PluginsController < ApplicationController
-  before_filter :authenticate_user!, :except => [ :show ]
+  before_filter :authenticate_user!, :except => [ :index, :show ]
 
   # GET /plugins
   # GET /plugins.json
