@@ -10,7 +10,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110721140326) do
+ActiveRecord::Schema.define(:version => 20110722091213) do
+
+  create_table "comments", :force => true do |t|
+    t.integer  "plugin_id"
+    t.integer  "user_id"
+    t.string   "ip"
+    t.string   "name"
+    t.string   "email"
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["plugin_id"], :name => "index_comments_on_plugin_id"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
+  create_table "plugin_versions", :force => true do |t|
+    t.integer  "plugin_id"
+    t.string   "version"
+    t.text     "changelog"
+    t.integer  "order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "plugin_versions", ["plugin_id"], :name => "index_plugin_versions_on_plugin_id"
 
   create_table "plugins", :force => true do |t|
     t.string   "name"
@@ -24,6 +49,18 @@ ActiveRecord::Schema.define(:version => 20110721140326) do
   end
 
   add_index "plugins", ["user_id"], :name => "index_plugins_on_user_id"
+
+  create_table "ratings", :force => true do |t|
+    t.integer  "plugin_id"
+    t.integer  "user_id"
+    t.string   "ip"
+    t.integer  "rate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ratings", ["plugin_id"], :name => "index_ratings_on_plugin_id"
+  add_index "ratings", ["user_id"], :name => "index_ratings_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -43,5 +80,14 @@ ActiveRecord::Schema.define(:version => 20110721140326) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "version_files", :force => true do |t|
+    t.integer  "plugin_version_id"
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "version_files", ["plugin_version_id"], :name => "index_version_files_on_plugin_version_id"
 
 end
