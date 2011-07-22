@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  plugin: 
+  version: MyString
+  changelog: MyText
+  order: 1
+
+two:
+  plugin: 
+  version: MyString
+  changelog: MyText
+  order: 1

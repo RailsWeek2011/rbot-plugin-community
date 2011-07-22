@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Plugin:</b>
+  <%= @plugin_version.plugin %>
+</p>
+
+<p>
+  <b>Version:</b>
+  <%= @plugin_version.version %>
+</p>
+
+<p>
+  <b>Changelog:</b>
+  <%= @plugin_version.changelog %>
+</p>
+
+<p>
+  <b>Order:</b>
+  <%= @plugin_version.order %>
+</p>
+
+
+<%= link_to 'Edit', edit_plugin_version_path(@plugin_version) %> |
+<%= link_to 'Back', plugin_versions_path %>

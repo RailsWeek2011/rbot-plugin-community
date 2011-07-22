@@ -1,0 +1,33 @@
+<%= form_for(@plugin_version) do |f| %>
+  <% if @plugin_version.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@plugin_version.errors.count, "error") %> prohibited this plugin_version from being saved:</h2>
+
+      <ul>
+      <% @plugin_version.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :plugin %><br />
+    <%= f.text_field :plugin %>
+  </div>
+  <div class="field">
+    <%= f.label :version %><br />
+    <%= f.text_field :version %>
+  </div>
+  <div class="field">
+    <%= f.label :changelog %><br />
+    <%= f.text_area :changelog %>
+  </div>
+  <div class="field">
+    <%= f.label :order %><br />
+    <%= f.number_field :order %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,7 +1,10 @@
 RbotPluginCommunity::Application.routes.draw do
+
   root :to => 'plugins#index'
 
-  resources :plugins
+  resources :plugins do
+    resources :plugin_versions
+  end
 
   devise_for :users
 

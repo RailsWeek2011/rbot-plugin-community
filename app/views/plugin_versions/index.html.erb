@@ -1,0 +1,29 @@
+<h1>Listing plugin_versions</h1>
+
+<table>
+  <tr>
+    <th>Plugin</th>
+    <th>Version</th>
+    <th>Changelog</th>
+    <th>Order</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @plugin_versions.each do |plugin_version| %>
+  <tr>
+    <td><%= plugin_version.plugin %></td>
+    <td><%= plugin_version.version %></td>
+    <td><%= plugin_version.changelog %></td>
+    <td><%= plugin_version.order %></td>
+    <td><%= link_to 'Show', plugin_version %></td>
+    <td><%= link_to 'Edit', edit_plugin_version_path(plugin_version) %></td>
+    <td><%= link_to 'Destroy', plugin_version, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Plugin version', new_plugin_version_path %>
