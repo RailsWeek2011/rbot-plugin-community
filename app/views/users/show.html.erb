@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<h3><%= @user.username %><% if not @user.fullname.nil? %> (<%= @user.fullname %>)<% end %></h3>
+
+<p>...</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
