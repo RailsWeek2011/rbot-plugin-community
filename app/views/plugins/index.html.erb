@@ -16,7 +16,7 @@
 <% @plugins.each do |plugin| %>
   <tr>
     <td><%= plugin.name %></td>
-    <td><%= plugin.user %></td>
+    <td><%= plugin.user.username %></td>
     <td><%= plugin.repository %></td>
     <td><%= plugin.summary %></td>
     <td><%= plugin.description %></td>

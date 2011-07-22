@@ -1,5 +1,6 @@
 class PluginsController < ApplicationController
   before_filter :authenticate_user!, :except => [ :index, :show ]
+  before_filter :owned_by_user!, :only => [ :edit, :update, :destroy ]
 
   # GET /plugins
   # GET /plugins.json
@@ -43,6 +44,7 @@ class PluginsController < ApplicationController
   # POST /plugins.json
   def create
     @plugin = Plugin.new(params[:plugin])
+    @plugin.user = current_user
 
     respond_to do |format|
       if @plugin.save
@@ -80,6 +82,19 @@ class PluginsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to plugins_url }
       format.json { head :ok }
+    end
+  end
+
+  protected
+
+  # ensure users only update/destroy their own plugins!
+  def owned_by_user!
+    plugin = Plugin.find params[:id]
+    if not current_user == plugin.user # and not is_admin?
+      respond_to do |format|
+        format.html { redirect_to plugins_path, alert: 'You do not own this plugin!' }
+        format.json { render json: {:status => :unauthorized } }
+      end
     end
   end
 end
