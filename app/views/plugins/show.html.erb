@@ -30,11 +30,11 @@
 
 <h3>Comments</h3>
 
-<%= render '/comments/plugin_index' %>
+<%= render 'comment_list' %>
 
 <h4>New Comment</h4>
 
-<%= render '/comments/form' %>
+<%= render 'comment_form' %>
 
 <%= link_to 'Edit', edit_plugin_path(@plugin) %> |
 <%= link_to 'Back', plugins_path %>
