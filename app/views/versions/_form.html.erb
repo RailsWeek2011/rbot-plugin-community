@@ -1,10 +1,10 @@
-<%= form_for(@plugin_version) do |f| %>
-  <% if @plugin_version.errors.any? %>
+<%= form_for(@version) do |f| %>
+  <% if @version.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@plugin_version.errors.count, "error") %> prohibited this plugin_version from being saved:</h2>
+      <h2><%= pluralize(@version.errors.count, "error") %> prohibited this version from being saved:</h2>
 
       <ul>
-      <% @plugin_version.errors.full_messages.each do |msg| %>
+      <% @version.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>

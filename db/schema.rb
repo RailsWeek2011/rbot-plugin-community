@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110722100651) do
+ActiveRecord::Schema.define(:version => 20110724114319) do
 
   create_table "comments", :force => true do |t|
     t.integer  "plugin_id"
@@ -25,17 +25,6 @@ ActiveRecord::Schema.define(:version => 20110722100651) do
 
   add_index "comments", ["plugin_id"], :name => "index_comments_on_plugin_id"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
-
-  create_table "plugin_versions", :force => true do |t|
-    t.integer  "plugin_id"
-    t.string   "version"
-    t.text     "changelog"
-    t.integer  "order"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "plugin_versions", ["plugin_id"], :name => "index_plugin_versions_on_plugin_id"
 
   create_table "plugins", :force => true do |t|
     t.string   "name"
@@ -82,13 +71,16 @@ ActiveRecord::Schema.define(:version => 20110722100651) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
-  create_table "version_files", :force => true do |t|
-    t.integer  "plugin_version_id"
-    t.string   "file"
+  create_table "versions", :force => true do |t|
+    t.integer  "plugin_id"
+    t.string   "version"
+    t.text     "changelog"
+    t.integer  "order"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "file"
   end
 
-  add_index "version_files", ["plugin_version_id"], :name => "index_version_files_on_plugin_version_id"
+  add_index "versions", ["plugin_id"], :name => "index_versions_on_plugin_id"
 
 end
