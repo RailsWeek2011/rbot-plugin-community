@@ -31,6 +31,10 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(params[:comment])
     @comment.plugin = Plugin.find params[:plugin_id]
+    @comment.ip = request.remote_ip
+    if user_signed_in?
+      @comment.user = current_user
+    end
 
     respond_to do |format|
       if @comment.save
