@@ -1,23 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RbotPluginCommunity</title>
+  <title>rbot plugins</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% unless user_signed_in? %>
-    <%= link_to("Login", new_user_session_path) %>
-  <% else %>
-    You're logged in as <%= current_user.username %>
-    <%= link_to("Logout", destroy_user_session_path, :method => :delete) %>
-  <% end %>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <div id="header-container">
+    <div id="header">
+      <div id="header-title">
+        <h1><strong>rbot</strong> plugins</h1>
+        <span>contributed by community</span>
+      </div>
 
-  <%= yield %>
+      <div id="user-container">
+        <div id="user" role="nav">
+        <% unless user_signed_in? %>
+
+          <div class="gravatar">
+            <%= link_to(image_tag('default_gravatar.jpeg'), new_user_registration_path) %>
+          </div>
+          <ul>
+            <li><%= link_to("login", new_user_session_path) %></li>
+            <li><%= link_to("sign up", new_user_registration_path) %></li>
+          </ul>
+
+        <% else %>
+
+          <div class="gravatar">
+            <%= link_to(image_tag(gravatar_url(current_user)), user_path(current_user)) %>
+          </div>
+          <ul>
+            <li><%= current_user.username %></li>
+            <li><%= link_to("logout", destroy_user_session_path, :method => :delete) %></li>
+            <li><%= link_to("settings", edit_user_registration_path) %></li>
+          </ul>
+
+        <% end %>
+        </div><!-- end user navigation -->
+      </div><!-- end user container-->
+    </div><!-- end header -->
+  </div><!-- end header container -->
+
+  <div id="main">
+
+    <div id="flash-messages">
+      <span class="notice"><%= notice %></span>
+      <span class="alert"><%= alert %></span>
+    </div>
+
+    <%= yield %>
+
+  </div>
 
 </body>
 </html>

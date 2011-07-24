@@ -1,0 +1,124 @@
+
+$background_color: #fdfdfd;
+$main_width: 920px; 
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $background_color;
+
+    font-family: helvetica,arial,freesans,clean,sans-serif;
+    font-size: 90%;
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+#header-container {
+    height: 90px;
+    background: url(<%= asset_path('header_gradient.png') %>) repeat-x scroll 0 0 $background_color;
+    border-bottom: 1px solid #dcdcdc;
+
+    #header {
+        position: relative;
+        height: inherit;
+        width: $main_width;
+        margin: 0 auto;
+
+        #header-title {
+            position: absolute;
+            bottom: 6px;
+            margin: 5px;
+            width: 290px;
+            height: 27px;
+
+            h1 {
+                font-family: "Trebuchet MS",sans-serif;
+                font-size: 28px;
+                font-weight: normal;
+                letter-spacing: -1px;
+                margin: 0;
+                padding: 0 0 0 2px;
+                display: inline;
+            }
+            span {
+                font-size: 12px;
+                margin-left: 4px;
+                text-shadow: 1px 1px 0 #FFFFFF;
+            }
+        } /* #header-title */
+
+        #user-container {
+            $width: 200px;
+            background-color: $background_color;
+            bottom: 1px;
+            height: 20px;
+            position: absolute;
+            right: 30px;
+            width: $width;
+            #user {
+                border-left: 1px solid #DCDCDC;
+                border-right: 1px solid #DCDCDC;
+                border-top: 1px solid #DCDCDC;
+                height: 18px;
+                margin: 1px;
+                padding: 0;
+                position: relative;
+                width: $width - 4;
+                .gravatar {
+                    display: block;
+                    margin: 0;
+                    padding: 0;
+                    img {
+                        margin: 1px;
+                        padding: 0;
+                    }
+                }
+                ul {
+                    display: block;
+                    position: absolute;
+                    left: 22px;
+                    margin: 0;
+                    padding: 0;
+                    top: 0;
+
+                    li {
+                        color: #666666;
+                        display: inline;
+                        padding-left: 0px;
+                        font-size: 11px;
+                        font-weight: bold;
+
+                        a {
+                            font-size: inherit;
+                            font-weight: inherit;
+                            color: inherit;
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+
+                        &:after {
+                            content: " \00B7"; /* middot */
+                        }
+
+                        &:last-child:after {
+                            content: "";
+                        }
+                    }
+                }
+            } /* #user */
+        } /* #user-outer-container */
+
+    } /* #header */ 
+} /* #header-container */
+
+#main {
+    width: $main_width;
+    margin: 0 auto;
+} /* #main */
+
