@@ -30,7 +30,7 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(params[:comment])
-    @comment.plugin = Plugin.find params[:plugin_id]
+    @plugin = Plugin.find params[:plugin_id]
 
     respond_to do |format|
       if @comment.save
