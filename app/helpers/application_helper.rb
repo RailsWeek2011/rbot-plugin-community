@@ -3,4 +3,8 @@ module ApplicationHelper
     email_hash = Digest::MD5.hexdigest(user.email.strip.downcase)
     "http://gravatar.com/avatar/#{email_hash}.png?s=#{size}&d=mm"
   end
+
+  def format_date(timestamp)
+    timestamp.strftime('%d %B %Y')
+  end
 end

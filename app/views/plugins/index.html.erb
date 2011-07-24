@@ -1,33 +1,25 @@
-<h1>Listing plugins</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>User</th>
-    <th>Repository</th>
-    <th>Summary</th>
-    <th>Description</th>
-    <th>Installation</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<ul id="plugin-index">
 <% @plugins.each do |plugin| %>
-  <tr>
-    <td><%= plugin.name %></td>
-    <td><%= plugin.user.username %></td>
-    <td><%= plugin.repository %></td>
-    <td><%= plugin.summary %></td>
-    <td><%= plugin.description %></td>
-    <td><%= plugin.installation %></td>
-    <td><%= link_to 'Show', plugin %></td>
-    <td><%= link_to 'Edit', edit_plugin_path(plugin) %></td>
-    <td><%= link_to 'Destroy', plugin, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <li class="plugin">
+    <div class="plugin-header">
+      <h3><%= link_to(plugin.name, plugin_path(plugin)) %></h3>
+      <span class="author">by <%= link_to(plugin.user.username, user_path(plugin.user)) %></span>
+      <div class="last_updated">Last updated <%= time_ago_in_words plugin.updated_at %> ago</div>
+    </div>
+    <div class="summary"><%= plugin.summary %></div>
+    <div class="meta">
+      <ul class="middot_list">
+        <li><%= link_to(pluralize(plugin.comments.length, "comment"), plugin_path(plugin), :anchor => "comments") %></li>
+        <li>4.5/10 rating</li>
+        <li><%= pluralize(plugin.versions.length, "version") %></li>
+        <li><%= format_date plugin.created_at %></li>
+      </ul>
+    </div>
+  </li>
 
-<br />
+<% end %>
+</ul>
+
 
 <%= link_to 'New Plugin', new_plugin_path %>
