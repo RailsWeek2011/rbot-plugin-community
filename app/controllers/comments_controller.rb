@@ -30,11 +30,11 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(params[:comment])
-    @plugin = Plugin.find params[:plugin_id]
+    @comment.plugin = Plugin.find params[:plugin_id]
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @plugin, notice: 'Comment was successfully created.' }
+        format.html { redirect_to @comment.plugin, notice: 'Comment was successfully created.' }
         format.json { render json: @comment, status: :created, location: @comment }
       else
         format.html { render action: "new" }
