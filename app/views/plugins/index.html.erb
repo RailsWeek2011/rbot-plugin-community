@@ -3,7 +3,7 @@
 <% @plugins.each do |plugin| %>
   <li class="plugin">
     <div class="plugin-header">
-      <h3><%= link_to(plugin.name, plugin_path(plugin)) %></h3>
+      <h2><%= link_to(plugin.name, plugin_path(plugin)) %></h2>
       <span class="author">by <%= link_to(plugin.user.username, user_path(plugin.user)) %></span>
       <div class="last_updated">Last updated <%= time_ago_in_words plugin.updated_at %> ago</div>
     </div>

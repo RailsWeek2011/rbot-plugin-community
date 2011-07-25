@@ -7,4 +7,12 @@ module ApplicationHelper
   def format_date(timestamp)
     timestamp.strftime('%d %B %Y')
   end
+
+  def current_user_owns?(model)
+    if model.respond_to? :user and current_user == model.user
+      true
+    else
+      false
+    end
+  end
 end

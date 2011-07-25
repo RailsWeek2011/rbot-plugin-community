@@ -1,11 +1,22 @@
-<ul id="version-list">
-  <% if @plugin.versions.empty? %>
-    <i>&lt;no version uploaded yet&gt;</i>
-  <% end %>
-  <% @plugin.versions.each do |version| %>
-  <li>
-    <div class="meta">Version <%= version.version%> uploaded <%= time_ago_in_words version.created_at %> ago</div>
-    <div class="content"><%= h version.changelog %></div>
-  </li>
-  <% end %>
-</ul>
+<table id="version-list">
+  <tr>
+    <th>version</th>
+    <th>changelog</th>
+    <th>age</th>
+    <th></th>
+  </tr>
+
+<% @plugin.versions.each do |version| %>
+  <tr>
+    <td class="table-cell-version"><%= version.version %></td>
+    <td class="table-cell-changelog"><%= h version.changelog %></td>
+    <td class="table-cell-age"><%= time_ago_in_words version.created_at %> ago</td>
+    <td class="table-cell-manage">
+      <% if current_user_owns? version.plugin %>
+        <%= link_to 'edit', edit_plugin_version_path(version) %> &middot;
+        <%= link_to 'delete', plugin_version_path(version), confirm: 'Are you sure?', method: :delete %>
+      <% end %>
+    </td>
+  </tr>
+<% end %>
+</table>

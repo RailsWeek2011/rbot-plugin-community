@@ -18,7 +18,7 @@
   <div class="field">
     <%= f.label :file %><br />
     <% if @version.file? %>
-      Uploaded File: <span><%= @version.file.filename %></span>
+      Uploaded File: <span><%= @version.filename %></span>
     <% else %>
       <%= f.file_field :file %>
     <% end %>

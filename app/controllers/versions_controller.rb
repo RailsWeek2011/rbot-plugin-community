@@ -35,6 +35,7 @@ class VersionsController < ApplicationController
 
   # GET /versions/1/edit
   def edit
+    @plugin = Plugin.find(params[:plugin_id])
     @version = Version.find(params[:id])
   end
 
