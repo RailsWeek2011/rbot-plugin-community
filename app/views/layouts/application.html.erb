@@ -46,12 +46,16 @@
 
   <div id="main">
 
-    <div id="flash-messages">
-      <span class="notice"><%= notice %></span>
-      <span class="alert"><%= alert %></span>
-    </div>
+    <div id="content">
+      <% if notice or alert %>
+        <div id="flash-messages">
+          <span class="notice"><%= notice %></span>
+          <span class="alert"><%= alert %></span>
+        </div>
+      <% end %>
 
-    <%= yield %>
+      <%= yield %>
+    </div>
 
   </div>
 
