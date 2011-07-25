@@ -21,11 +21,11 @@ class VersionsController < ApplicationController
     end
   end
 
-  # GET /versions/new
-  # GET /versions/new.json
+  # GET /plugins/:plugin_id/versions/new
+  # GET /plugins/:plugin_id/versions/new.json
   def new
     @plugin = Plugin.find(params[:plugin_id])
-    @version = Version.new
+    @version = Version.new(:plugin => @plugin)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,14 +38,16 @@ class VersionsController < ApplicationController
     @version = Version.find(params[:id])
   end
 
-  # POST /versions
-  # POST /versions.json
+  # POST /plugins/:plugin_id/versions
+  # POST /plugins/:plugin_id/versions.json
   def create
     @version = Version.new(params[:version])
+    @plugin = Plugin.find(params[:plugin_id])
+    @version.plugin = @plugin
 
     respond_to do |format|
       if @version.save
-        format.html { redirect_to @version, notice: 'Version was successfully created.' }
+        format.html { redirect_to @plugin, notice: 'Version was successfully created.' }
         format.json { render json: @version, status: :created, location: @version }
       else
         format.html { render action: "new" }
