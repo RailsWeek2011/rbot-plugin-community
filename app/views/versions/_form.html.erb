@@ -16,6 +16,15 @@
     <%= f.text_field :version %>
   </div>
   <div class="field">
+    <%= f.label :file %><br />
+    <% if @version.file? %>
+      Uploaded File: <span><%= @version.file.filename %></span>
+    <% else %>
+      <%= f.file_field :file %>
+    <% end %>
+    <%= f.hidden_field :file_cache %>
+  </div>
+  <div class="field">
     <%= f.label :changelog %><br />
     <%= f.text_area :changelog %>
   </div>
