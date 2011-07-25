@@ -24,6 +24,7 @@ class VersionsController < ApplicationController
   # GET /versions/new
   # GET /versions/new.json
   def new
+    @plugin = Plugin.find(params[:plugin_id])
     @version = Version.new
 
     respond_to do |format|

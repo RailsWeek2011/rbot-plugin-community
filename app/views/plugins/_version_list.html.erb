@@ -1,0 +1,11 @@
+<ul id="version-list">
+  <% if @plugin.versions.empty? %>
+    <i>&lt;no version uploaded yet&gt;</i>
+  <% end %>
+  <% @plugin.versions.each do |version| %>
+  <li>
+    <div class="meta">Version <%= version.version%> uploaded <%= time_ago_in_words version.created_at %> ago</div>
+    <div class="content"><%= h version.changelog %></div>
+  </li>
+  <% end %>
+</ul>
