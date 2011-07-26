@@ -46,7 +46,7 @@
 
   <div id="main">
 
-    <div id="content">
+    <div id="content" class="left">
       <% if notice or alert %>
         <div id="flash-messages">
           <span class="notice"><%= notice %></span>
@@ -55,6 +55,15 @@
       <% end %>
 
       <%= yield %>
+    </div>
+
+    <div id="sidebar" class="right">
+      <!-- allow views to render additional content here -->
+      <% if content_for? :right %>
+        <%= yield(:right) %>
+      <% end %>
+
+      <%= render("layouts/sidebar") %>
     </div>
 
   </div>

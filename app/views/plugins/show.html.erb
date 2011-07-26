@@ -38,3 +38,15 @@
 
 <%= link_to 'Edit', edit_plugin_path(@plugin) %> |
 <%= link_to 'Back', plugins_path %>
+
+<% content_for :right do %>
+  <a href="download" id="plugin-download">
+      <span class="header">download</span>
+      <span class="current-version">v0.1</span>
+  </a>
+  <div id="plugin-links">
+    <a href="">2 other versions</a><br />
+    <span class="repository">repository: </span><a href="">github.com</a>
+  </div>
+<% end %>
+

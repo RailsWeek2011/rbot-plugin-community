@@ -89,6 +89,57 @@ ul#plugin-index {
         .plugin-header {
         }
     }
+}
 
+a#plugin-download {
+    $gradient_from: #ffffff;
+    $gradient_to: #e8e8e8;
+    background: $gradient_from;
+    background: -moz-linear-gradient(center top , $gradient_from, $gradient_to) repeat scroll 0 0 transparent;
+    background: -webkit-gradient(linear,left top,left bottom,from($gradient_from),to($gradient_to));
+
+    border: 1px solid #D4D4D4;
+    border-radius: 3px 3px 3px 3px;
+    font-size: 11px;
+    padding: 2px;
+    text-align: center;
+    width: 80px;
+    display: inline-block;
+    color: inherit;
+    &:hover {
+        text-decoration: none;
+        $gradient_from: darken(#ffffff, 3%);
+        $gradient_to: darken(#e8e8e8, 3%);
+        background: $gradient_from;
+        background: -moz-linear-gradient(center top , $gradient_from, $gradient_to) repeat scroll 0 0 transparent;
+        background: -webkit-gradient(linear,left top,left bottom,from($gradient_from),to($gradient_to));
+    }
+
+    .header {
+        font-size: 10px;
+        font-variant: small-caps;
+        display: block;
+        color: #000;
+    }
+    
+    .current-version {
+        color: #006400;
+        font-family: verdana;
+        font-size: 13px;
+        font-weight: bold;
+    }
+}
+
+#plugin-links {
+    display: inline-block;
+    font-size: 12px;
+    padding: 3px 0 0 3px;
+
+    a {
+    }
+    .repository {
+        font-weight: bold;
+        color: #8b0000;
+    }
 }
 
