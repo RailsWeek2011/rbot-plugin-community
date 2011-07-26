@@ -40,13 +40,14 @@
 <%= link_to 'Back', plugins_path %>
 
 <% content_for :right do %>
-  <a href="download" id="plugin-download">
+  <a href="<%= @plugin.current_version.file.url %>" id="plugin-download">
       <span class="header">download</span>
-      <span class="current-version">v0.1</span>
+      <span class="current-version"><%= @plugin.current_version.version %></span>
   </a>
   <div id="plugin-links">
-    <a href="">2 other versions</a><br />
-    <span class="repository">repository: </span><a href="">github.com</a>
+    <%= link_to("#{@plugin.versions.count-1} other versions", plugin_path(@plugin)) %><br />
+    <span class="repository">repository: </span>
+    <%= link_to(domain_name(@plugin.repository), @plugin.repository) %>
   </div>
 <% end %>
 

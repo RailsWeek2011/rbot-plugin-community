@@ -76,6 +76,24 @@ class PluginsController < ApplicationController
     end
   end
 
+  # change the current version of this plugin
+  # PUT /plugins/1/versions/1/current
+  # PUT /plugins/1/versions/1/current.json
+  def current_version
+    @plugin = Plugin.find(params[:plugin_id])
+    @version = Version.find(params[:id])
+    @plugin.current_version = @version
+    respond_to do |format|
+      if @plugin.save
+          format.html { redirect_to(@plugin, :notice => 'Current plugin version successfully updated.') }
+          format.json { render json: @plugin, status: :updated }
+        else
+          format.html { redirect_to @plugin, alert: 'Error updating current plugin version.' }
+          format.json { render json: @plugin.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   # DELETE /plugins/1
   # DELETE /plugins/1.json
   def destroy

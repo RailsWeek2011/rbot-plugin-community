@@ -2,7 +2,12 @@
 $background_color: #fdfdfd;
 $main_width: 920px; 
 
+.middot_list {
+    margin: 0;
+}
 .middot_list li {
+    display: inline;
+
     &:after {
         content: " \00B7"; /* middot */
     }

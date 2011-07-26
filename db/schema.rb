@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110724114319) do
+ActiveRecord::Schema.define(:version => 20110726005801) do
 
   create_table "comments", :force => true do |t|
     t.integer  "plugin_id"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20110724114319) do
     t.text     "installation"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "current_version_id"
   end
 
   add_index "plugins", ["user_id"], :name => "index_plugins_on_user_id"
