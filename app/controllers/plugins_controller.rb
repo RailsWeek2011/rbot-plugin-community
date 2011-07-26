@@ -10,8 +10,16 @@ class PluginsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @plugins }
+      format.rss
     end
   end
+
+ # GET /plugins.rss
+ def rss
+   @plugins = Plugin.find(:all, :order => "id DESC", :limit => 10)
+   render :layout => false
+   response.headers["Content-Type"] = "application/xml; charset=utf-8" 
+ end
 
   # GET /plugins/1
   # GET /plugins/1.json
