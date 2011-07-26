@@ -40,14 +40,22 @@
 <%= link_to 'Back', plugins_path %>
 
 <% content_for :right do %>
-  <a href="<%= @plugin.current_version.file.url %>" id="plugin-download">
-      <span class="header">download</span>
-      <span class="current-version"><%= @plugin.current_version.version %></span>
-  </a>
+  <% if @plugin.current_version %>
+    <a href="<%= @plugin.current_version.file.url %>" id="plugin-download">
+        <span class="header">download</span>
+        <span class="current-version"><%= @plugin.current_version.version %></span>
+    </a>
+  <% else %>
+    <a href="<%= new_plugin_version_path(@plugin) %>" id="plugin-download">
+      <span class="header">download<br />unavailible</span>
+    </a>
+  <% end %>
   <div id="plugin-links">
-    <%= link_to("#{@plugin.versions.count-1} other versions", plugin_path(@plugin)) %><br />
-    <span class="repository">repository: </span>
-    <%= link_to(domain_name(@plugin.repository), @plugin.repository) %>
+    <%= link_to("#{@plugin.versions.count} versions", plugin_path(@plugin)) %><br />
+    <% unless @plugin.repository.empty? %>
+      <span class="repository">repository: </span>
+      <%= link_to(domain_name(@plugin.repository), @plugin.repository) %>
+    <% end %>
   </div>
 <% end %>
 
