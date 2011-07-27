@@ -9,6 +9,10 @@ RbotPluginCommunity::Application.routes.draw do
       end
     end
     resources :comments
+
+    member do 
+      post 'rate' => 'ratings#rate'
+    end
   end
 
   devise_for :users

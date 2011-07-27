@@ -1,0 +1,38 @@
+$(document).ready( function() {
+    function active_star(input) {
+        // set image to full star
+        $(input).attr('src', '<%= image_path('star.png') %>');
+    }
+
+    function inactive_star(input) {
+        // set image to empty star
+        $(input).attr('src', '<%= image_path('star-empty.png') %>');
+    }
+
+    function reset_star(input) {
+        $(input).attr('src', $(input).attr('data-orig-src'));
+    }
+
+    var plugin_ratings = $('#plugin-ratings input[type="image"]');
+    plugin_ratings.each(function (i, input) {
+        // remember old state in custom data- attribute:
+        if(!$(input).attr('data-orig-src')) {
+            $(input).attr('data-orig-src', $(input).attr('src'));
+        }
+    });
+    plugin_ratings.mouseenter(function() {
+        var hover_rating = parseInt($(this).val());
+        plugin_ratings.each(function (i, input) {
+            inactive_star(input);
+            if(i+1 <= hover_rating) {
+                active_star(input);
+            }
+        });
+    }); 
+    plugin_ratings.mouseleave(function() {
+        plugin_ratings.each(function (i, input) {
+            reset_star(input);
+        });
+    });
+}); 
+

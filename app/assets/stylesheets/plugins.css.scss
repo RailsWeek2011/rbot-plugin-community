@@ -143,3 +143,25 @@ a#plugin-download {
     }
 }
 
+#plugin-ratings {
+    margin: 3px;
+
+    input[type="image"] {
+        display: block;
+        float: left;
+        margin: 0;
+        padding: 2px;
+    }
+
+}
+
+#plugin-ratings-stats {
+    clear: both;
+    color: #888888;
+    font-family: verdana;
+    font-size: 0.7em;
+    font-style: italic;
+    margin: 5px;
+    padding-top: 4px;
+}
+

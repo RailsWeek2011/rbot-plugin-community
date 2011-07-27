@@ -57,5 +57,19 @@
       <%= link_to(domain_name(@plugin.repository), @plugin.repository) %>
     <% end %>
   </div>
+
+  <h3>Ratings</h3>
+  <% plugin_rating_avg = 2.5 %>
+  <% plugin_rating_count = 10 %>
+  <%= form_tag(rate_plugin_path(@plugin), :id => "plugin-ratings", :method => "post") do |f| %>
+    <% 1.upto(5) do |value| %>
+      <% if @plugin.ratings_average >= value %>
+        <%= image_submit_tag(image_path("star.png"), :name => "rate[#{value}]", :value => value) %>
+      <% else %>
+        <%= image_submit_tag(image_path("star-empty.png"), :name => "rate[#{value}]", :value => value) %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <div id="plugin-ratings-stats">(<%= '%0.1f' % @plugin.ratings_average %>/5.0 &middot; <%= @plugin.ratings.count %> votes)</div>
 <% end %>
 
