@@ -11,7 +11,7 @@
     <div class="meta">
       <ul class="middot_list">
         <li><%= link_to(pluralize(plugin.comments.length, "comment"), plugin_path(plugin), :anchor => "comments") %></li>
-        <li>4.5/10 rating</li>
+        <li><%= '%0.1f' % plugin.ratings_average %>/5.0 rating</li>
         <li><%= pluralize(plugin.versions.length, "version") %></li>
         <li><%= format_date plugin.created_at %></li>
       </ul>

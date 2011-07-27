@@ -8,6 +8,6 @@ class Plugin < ActiveRecord::Base
 
   # calculate and return the average ratings
   def ratings_average
-    Rating.average('rate', :conditions => ['plugin_id = ?', id])
+    Rating.average('rate', :conditions => ['plugin_id = ?', id]) || 0
   end
 end

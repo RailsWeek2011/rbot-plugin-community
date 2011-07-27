@@ -4,11 +4,19 @@ class RatingsController < ApplicationController
     rate = params[:rate].keys.first
 
     # create rating with user reference OR with ip entry:
-    user = ip = nil
+    ip = request.remote_ip
+    user = nil
     if user_signed_in?
       user = current_user
-    else
-      ip = request.remote_ip
+    end
+
+    if (user and not Rating.where('plugin_id = ? AND user_id = ?', @plugin.id, user.id).empty?) or 
+       (ip and not Rating.where('plugin_id = ? AND ip = ?', @plugin.id, ip).empty?)
+      respond_to do |format|
+        format.html { redirect_to @plugin, alert: 'Plugin already rated!' }
+        format.json { render json: @plugin, status: :not_rated }
+      end
+      return
     end
     @rating = Rating.new(:plugin => @plugin, :user => user, :ip => ip, :rate => rate)
 
