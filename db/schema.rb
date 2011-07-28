@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110728213544) do
+ActiveRecord::Schema.define(:version => 20110728214437) do
 
   create_table "comments", :force => true do |t|
     t.integer  "plugin_id"
@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(:version => 20110728213544) do
   add_index "ratings", ["user_id"], :name => "index_ratings_on_user_id"
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                 :default => "", :null => false
-    t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
+    t.string   "email",                                 :default => "",    :null => false
+    t.string   "encrypted_password",     :limit => 128, :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -68,8 +68,8 @@ ActiveRecord::Schema.define(:version => 20110728213544) do
     t.datetime "updated_at"
     t.string   "username"
     t.string   "fullname"
-    t.boolean  "opt_in"
-    t.boolean  "is_admin"
+    t.boolean  "opt_in",                                :default => false
+    t.boolean  "is_admin",                              :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
