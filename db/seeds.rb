@@ -7,5 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # create a default admin user
-User.create(:username => 'admin', :email => 'info@sixserv.org', :password => 'swordfish', :password_confirmation => 'swordfish')
+User.create(:username => 'admin', :email => 'info@sixserv.org', :password => 'swordfish', :password_confirmation => 'swordfish', :is_admin => true)
 
