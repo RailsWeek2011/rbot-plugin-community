@@ -2,7 +2,8 @@
 <ul id="plugin-index">
 <% @plugins.each do |plugin| %>
   <li class="plugin">
-    <div class="plugin-header"><img src="http://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" height="10" />
+    <div class="plugin-header">
+      <%= image_tag('rss.png', :width => '10', :height => '10') %> 
       <h2><%= link_to(plugin.name, plugin_path(plugin)) %></h2>
       <span class="author">by <%= link_to(plugin.user.username, user_path(plugin.user)) %></span>
       <div class="last_updated">Last updated <%= time_ago_in_words plugin.updated_at %> ago</div>
@@ -24,7 +25,8 @@
 
 <%= 
 link_to 'New Plugin', new_plugin_path %>
-<br> 
-<div id="feed">Get our feed for updates: <a href="/plugins.rss"><img src="http://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" 
-height="8"/></a></div>
+<br /> 
+<div id="feed">
+  Get our feed for updates: <%= link_to(image_tag('rss.png', :width => '10', :height => '10'), plugins_path(:format => 'rss') ) %> 
+</div>
 <link rel="alternate" type="application/rss+xml" title="RSS" href="plugins.rss" />
