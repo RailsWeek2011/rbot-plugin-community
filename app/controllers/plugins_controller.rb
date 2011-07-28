@@ -25,9 +25,8 @@ class PluginsController < ApplicationController
   # GET /plugins/1.json
   def show
     @plugin = Plugin.find(params[:id])
+    @comments = Comment.all_approved_for_plugin_id(params[:id])
     @comment = Comment.new 
-
-    @comments = @plugin.comments
 
     respond_to do |format|
       format.html # show.html.erb

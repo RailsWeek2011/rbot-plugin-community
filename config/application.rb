@@ -38,5 +38,9 @@ module RbotPluginCommunity
 
     # Enable the asset pipeline
     config.assets.enabled = true
+
+    # URL and Wordpress API Key for Rakismet:
+    config.rakismet.key = ''
+    config.rakismet.url = ''
   end
 end

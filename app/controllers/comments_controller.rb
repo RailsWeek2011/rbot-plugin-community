@@ -38,8 +38,13 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment.plugin, notice: 'Comment was successfully created.' }
-        format.json { render json: @comment, status: :created, location: @comment }
+        if @comment.approved?
+          format.html { redirect_to @comment.plugin, notice: 'Comment was successfully created.' }
+          format.json { render json: @comment, status: :created, location: @comment.plugin }
+        else
+          format.html { redirect_to @comment.plugin, notice: 'Your comment awaits moderation.' }
+          format.json { render json: @comment, status: :needs_approval, location: @comment.plugin }
+        end
       else
         format.html { render action: "new" }
         format.json { render json: @comment.errors, status: :unprocessable_entity }

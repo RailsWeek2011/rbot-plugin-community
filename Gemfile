@@ -32,6 +32,9 @@ gem 'formatize'
 # For easy version uploading
 gem 'carrierwave'
 
+# For akismet comment-antispam
+gem 'rakismet'
+
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
