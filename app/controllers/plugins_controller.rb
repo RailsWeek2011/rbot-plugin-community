@@ -15,11 +15,11 @@ class PluginsController < ApplicationController
   end
 
  # GET /plugins.rss
- def rss
-   @plugins = Plugin.find(:all, :order => "id DESC", :limit => 10)
-   render :layout => false
-   response.headers["Content-Type"] = "application/xml; charset=utf-8" 
- end
+# def rss
+#   @plugins = Plugin.find(:all, :order => "id DESC", :limit => 10)
+#   render :layout => false
+#   response.headers["Content-Type"] = "application/xml; charset=utf-8" 
+# end
 
   # GET /plugins/1
   # GET /plugins/1.json
@@ -32,6 +32,7 @@ class PluginsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @plugin }
+      format.rss 
     end
   end
 
