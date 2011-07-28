@@ -5,7 +5,7 @@
     <div class="meta">
       <span>written <%= time_ago_in_words comment.created_at %> ago by <%= h comment.name %></span>
     </div>
-    <div class="content"><%= h comment.content %></div>
+    <div class="content"><%= markdown comment.content %></div>
   </li>
   <% end %>
 </ul>

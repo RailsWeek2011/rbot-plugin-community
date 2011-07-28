@@ -5,21 +5,21 @@
       <span class="author">by <%= link_to(@plugin.user.username, user_path(@plugin.user)) %></span>
       <div class="last_updated">Last updated <%= time_ago_in_words @plugin.updated_at %> ago</div>
     </div>
-    <div class="summary"><%= @plugin.summary %></div>
+    <div class="summary"><%= markdown @plugin.summary %></div>
 
     <div class="description">
       <h3>Description</h3>
       
-      <%= @plugin.description %>
+      <%= markdown @plugin.description %>
     </div> 
 
     <div class="installation">
       <h3>Installation</h3>
-      <div class="default-instructions"> To install a plugin, just download 
+      <div class="default-instructions">To install a plugin, just download 
         the plugin file into your rbot plugin directory (usually something 
         like <code>/home/rbot/.rbot/plugins</code>) and restart (or rescan) 
         your bot.</div>
-      <span><%= @plugin.installation %></span>
+      <span><%= markdown @plugin.installation %></span>
     </div>
   </div> <!-- .plugin -->
 </div> <!-- #plugin-show -->
