@@ -13,14 +13,14 @@
     <td class="table-cell-age"><%= time_ago_in_words version.created_at %> ago</td>
     <td class="table-cell-manage">
       <ul class="middot_list">
-      <% if current_user_owns? version.plugin %>
         <li><%= link_to 'download', version.file.url %></li>
-        <% if @plugin.current_version != version  %>
-          <li><%= link_to 'current', current_plugin_version_path(@plugin, version), method: :put %></li>
+        <% if current_user_owns? version.plugin %>
+          <% if @plugin.current_version != version  %>
+            <li><%= link_to 'current', current_plugin_version_path(@plugin, version), method: :put %></li>
+          <% end %>
+          <li><%= link_to 'edit', edit_plugin_version_path(version) %></li>
+          <li><%= link_to 'delete', plugin_version_path(version), confirm: 'Are you sure?', method: :delete %></li> 
         <% end %>
-        <li><%= link_to 'edit', edit_plugin_version_path(version) %></li>
-        <li><%= link_to 'delete', plugin_version_path(version), confirm: 'Are you sure?', method: :delete %></li> 
-      <% end %>
       </ul>
     </td>
   </tr>
