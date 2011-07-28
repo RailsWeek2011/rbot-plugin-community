@@ -12,24 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :version %><br />
+    <%= f.label :version %>
     <%= f.text_field :version %>
   </div>
   <div class="field">
-    <%= f.label :file %><br />
+    <%= f.label :file %>
     <% if @version.file? %>
-      Uploaded File: <span><%= @version.filename %></span>
+      <div class="version-cached-file">Uploaded File: <code><%= @version.filename %></code></div>
     <% else %>
       <%= f.file_field :file %>
     <% end %>
     <%= f.hidden_field :file_cache %>
   </div>
   <div class="field">
-    <%= f.label :changelog %><br />
+    <%= f.label :changelog %>
     <%= f.text_area :changelog %>
   </div>
   <div class="field">
-    <%= f.label :order %><br />
+    <%= f.label :order %>
     <%= f.number_field :order %>
   </div>
   <div class="actions">

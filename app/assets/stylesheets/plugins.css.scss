@@ -143,19 +143,21 @@ a#plugin-download {
     }
 }
 
-#feed{
-            color: #888888;
-            font-size: 0.8em;
-            margin: 0;
-            a {
-                color: inherit;
-            }
-        }
+#feed { 
+    color: #888888;
+    font-size: 0.8em;
+    margin: 0;
+    a {
+        color: inherit;
+    }
+}
+
 #plugin-ratings {
     margin: 3px;
 
     input[type="image"] {
         display: block;
+        border: 0px solid white;
         float: left;
         margin: 0;
         padding: 2px;
@@ -172,4 +174,6 @@ a#plugin-download {
     margin: 5px;
     padding-top: 4px;
 }
+
+
 

@@ -1,12 +1,9 @@
-#xml.item :foo => 'bar' do
-#  xml.title "kaka"
-#end
 xml.instruct!
 
 xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
  xml.channel do
 
-   xml.title       "rbot-plugin-community feed"
+   xml.title       "Rbot Plugin Community: Plugin Feed"
    xml.link        url_for :only_path => false, :controller => 'plugins'
    xml.description "always be up-to-date with the 10 freshest plugins..."
 

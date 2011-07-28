@@ -32,12 +32,9 @@
 
 <%= render 'comment_list' %>
 
-<h4>New Comment</h4>
+<h4>Write New Comment</h4>
 
 <%= render 'comment_form' %>
-
-<%= link_to 'Edit', edit_plugin_path(@plugin) %> |
-<%= link_to 'Back', plugins_path %>
 
 <% content_for :right do %>
   <% if @plugin.current_version %>
@@ -71,5 +68,13 @@
     <% end %>
   <% end %>
   <div id="plugin-ratings-stats">(<%= '%0.1f' % @plugin.ratings_average %>/5.0 &middot; <%= @plugin.ratings.count %> votes)</div>
+
+  <h3>Manage</h3>
+  <ul class="manage">
+    <li><%= link_to 'Edit this plugin', edit_plugin_path(@plugin) %></li>
+    <li><%= link_to 'Upload new version', new_plugin_version_path(@plugin) %>
+    <li><%= link_to 'Delete this plugin', plugin_path(@plugin), confirm: 'Are you sure you want to delete this plugin?', method: :delete %></li>
+  </ul>
+
 <% end %>
 

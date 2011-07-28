@@ -12,15 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :content %><br />
+    <%= f.label :content %> <span class="note">you can use <%= link_to 'markdown', 'http://daringfireball.net/projects/markdown/syntax' %> in your comment</span>
     <%= f.text_area :content %>
   </div>
   <div class="actions">

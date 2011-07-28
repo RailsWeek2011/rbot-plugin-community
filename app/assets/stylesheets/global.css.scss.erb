@@ -2,21 +2,6 @@
 $background_color: #fdfdfd;
 $main_width: 920px; 
 
-.middot_list {
-    margin: 0;
-}
-.middot_list li {
-    display: inline;
-
-    &:after {
-        content: " \00B7"; /* middot */
-    }
-
-    &:last-child:after {
-        content: "";
-    }
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -62,6 +47,97 @@ h3 {
     font-size: 12px;
     color: #333;
     margin: 0;
+}
+
+h4 {
+    border-bottom: 1px solid #D9D9D9;
+    font-size: 0.8em;
+    font-style: italic;
+    margin: 4px 4px 10px;
+}
+
+form {
+    margin: 5px;
+
+    label {
+        color: #333333;
+        // display: block;
+        font-size: 0.92em;
+        font-weight: bold;
+        margin: 5px 0 0;
+        padding: 0;
+    }
+
+    .note {
+        color: #888888;
+        font-family: verdana;
+        font-size: 0.8em;
+        font-style: italic;
+        margin: 0;
+        padding-left: 3px;
+
+        &:before {
+            content: "(";
+        }
+
+        &:after {
+            content: ")";
+        }
+    }
+
+    .field {
+        margin: 0;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    input, textarea {
+        border: 1px solid #D9D9D9;
+        display: block;
+    }
+
+    textarea, input[type="text"], input[type="password"] {
+        margin: 0 0 10px;
+    }
+
+    input[type="submit"] {
+        margin-top: 10px;
+        $gradient_from: #ffffff;
+        $gradient_to: #e8e8e8;
+        background: $gradient_from;
+        background: -moz-linear-gradient(center top , $gradient_from, $gradient_to) repeat scroll 0 0 transparent;
+        background: -webkit-gradient(linear,left top,left bottom,from($gradient_from),to($gradient_to));
+        &:hover {
+            text-decoration: none;
+            $gradient_from: darken(#ffffff, 3%);
+            $gradient_to: darken(#e8e8e8, 3%);
+            background: $gradient_from;
+            background: -moz-linear-gradient(center top , $gradient_from, $gradient_to) repeat scroll 0 0 transparent;
+            background: -webkit-gradient(linear,left top,left bottom,from($gradient_from),to($gradient_to));
+        }
+    }
+
+    textarea {
+        height: 100px;
+        width: 560px;
+    }
+}
+
+.middot_list {
+    margin: 0;
+}
+.middot_list li {
+    display: inline;
+
+    &:after {
+        content: " \00B7"; /* middot */
+    }
+
+    &:last-child:after {
+        content: "";
+    }
 }
 
 #header-container {
@@ -195,4 +271,29 @@ h3 {
         }
     }
 } /* #main */
+
+ul.manage {
+    font-size: 0.92em;
+    list-style: none outside none;
+    margin: 5px;
+    padding: 0;
+
+    li {
+        margin: 2px 0 0;
+        a {
+            margin: 0;
+            &:hover {
+                margin: 0;
+            }
+        }
+        a[data-method="delete"] {
+            color: darkred !important;
+            font-weight: bold;
+            &:hover, &:visited {
+                color: inherit;
+            }
+        }
+    }
+}
+
 
