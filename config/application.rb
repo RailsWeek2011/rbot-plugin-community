@@ -44,6 +44,7 @@ module RbotPluginCommunity
     config.rakismet.url = ''
 
     # For bot notifications:
+    config.rbot_url = ''
     config.rbot_channel = ''
     config.rbot_username = ''
     config.rbot_password = ''
