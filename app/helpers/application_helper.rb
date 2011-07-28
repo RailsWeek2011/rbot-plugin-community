@@ -19,4 +19,9 @@ module ApplicationHelper
       false
     end
   end
+
+  def is_admin?(user=nil)
+    user = user || current_user
+    user.is_admin? if user
+  end
 end

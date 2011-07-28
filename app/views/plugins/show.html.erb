@@ -71,6 +71,7 @@
 
   <h3>Manage</h3>
   <ul class="manage">
+    <li><%= link_to 'Create New Plugin', new_plugin_path %></li>
     <li><%= link_to 'Edit this plugin', edit_plugin_path(@plugin) %></li>
     <li><%= link_to 'Upload new version', new_plugin_version_path(@plugin) %>
     <li><%= link_to 'Delete this plugin', plugin_path(@plugin), confirm: 'Are you sure you want to delete this plugin?', method: :delete %></li>

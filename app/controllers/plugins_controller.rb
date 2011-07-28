@@ -25,7 +25,11 @@ class PluginsController < ApplicationController
   # GET /plugins/1.json
   def show
     @plugin = Plugin.find(params[:id])
-    @comments = Comment.all_approved_for_plugin_id(params[:id])
+    if current_user and current_user.is_admin?
+      @comments = Comment.all_for_plugin_id(params[:id])
+    else
+      @comments = Comment.all_approved_for_plugin_id(params[:id])
+    end
     @comment = Comment.new 
 
     respond_to do |format|

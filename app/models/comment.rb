@@ -4,6 +4,10 @@ class Comment < ActiveRecord::Base
   belongs_to :plugin
   belongs_to :user
 
+  def self.all_for_plugin_id(plugin_id)
+    where(:plugin_id => plugin_id)
+  end
+
   def self.all_approved_for_plugin_id(plugin_id)
     where(:plugin_id => plugin_id, :approved => true)
   end

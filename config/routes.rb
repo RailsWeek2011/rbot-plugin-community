@@ -16,7 +16,7 @@ RbotPluginCommunity::Application.routes.draw do
   end
 
   devise_for :users
-  resources :users, :only => [:index, :show, :edit]
+  resources :users, :only => [:index, :show, :edit, :update]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <link href="http://127.0.0.1:3000/plugins.rss" rel="alternate" type="application/rss+xml" title="10 newest plugins feed" /> 
+  <link href="<%= plugins_url(:format => 'rss') %>" rel="alternate" type="application/rss+xml" title="10 newest plugins feed" /> 
 </head>
 <body>
 
@@ -73,6 +73,8 @@
       <!-- allow views to render additional content here -->
       <% if content_for? :right %>
         <%= yield(:right) %>
+
+        <div class="seperator"></div>
       <% end %>
 
       <%= render("layouts/sidebar") %>
