@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110728184621) do
+ActiveRecord::Schema.define(:version => 20110728204142) do
 
   create_table "comments", :force => true do |t|
     t.integer  "plugin_id"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20110728184621) do
     t.text     "content",    :limit => 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "approved"
   end
 
   add_index "comments", ["plugin_id"], :name => "index_comments_on_plugin_id"
