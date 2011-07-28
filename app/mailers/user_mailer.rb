@@ -1,11 +1,5 @@
 class UserMailer < ActionMailer::Base
   default from: "from@example.com"
-  def welcome_email(user)
-    @user = user
-    @url  = "http://awesomerubyplugins.org/login"
-    mail(:to => user.email,
-         :subject => "Welcome ....")
-  end
   def new_plugin(user,plugin)
     @plugin = plugin
     @user = user
