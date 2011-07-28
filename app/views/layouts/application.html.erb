@@ -31,7 +31,7 @@
         <% else %>
 
           <div class="gravatar">
-            <%= link_to(image_tag(gravatar_url(current_user)), user_path(current_user)) %>
+            <%= link_to(image_tag(gravatar_url(current_user.email)), user_path(current_user)) %>
           </div>
           <ul class="middot_list">
             <li><%= link_to(current_user.username, user_path(current_user))  %></li>
@@ -52,6 +52,17 @@
         <div id="flash-messages">
           <span class="notice"><%= notice %></span>
           <span class="alert"><%= alert %></span>
+          <% if flash[:errors] %>
+            <div id="error_explanation">
+              <h2><%= pluralize(flash[:errors].count, "error") %> occured:</h2>
+
+              <ul>
+              <% flash[:errors].full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
         </div>
       <% end %>
 

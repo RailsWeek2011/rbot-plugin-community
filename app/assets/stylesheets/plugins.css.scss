@@ -143,6 +143,7 @@ a#plugin-download {
     }
 }
 
+<<<<<<< HEAD
 #feed{
             color: #888888;
             font-size: 0.8em;
@@ -151,4 +152,27 @@ a#plugin-download {
                 color: inherit;
             }
         }
+=======
+#plugin-ratings {
+    margin: 3px;
+
+    input[type="image"] {
+        display: block;
+        float: left;
+        margin: 0;
+        padding: 2px;
+    }
+
+}
+
+#plugin-ratings-stats {
+    clear: both;
+    color: #888888;
+    font-family: verdana;
+    font-size: 0.7em;
+    font-style: italic;
+    margin: 5px;
+    padding-top: 4px;
+}
+>>>>>>> 8648bc7a0ac8b1dafc1b8ba962f30b343fc1d300
 

@@ -7,11 +7,11 @@
       <span class="author">by <%= link_to(plugin.user.username, user_path(plugin.user)) %></span>
       <div class="last_updated">Last updated <%= time_ago_in_words plugin.updated_at %> ago</div>
     </div>
-    <div class="summary"><%= plugin.summary %></div>
+    <div class="summary"><%= markdown plugin.summary %></div>
     <div class="meta">
       <ul class="middot_list">
         <li><%= link_to(pluralize(plugin.comments.length, "comment"), plugin_path(plugin), :anchor => "comments") %></li>
-        <li>4.5/10 rating</li>
+        <li><%= '%0.1f' % plugin.ratings_average %>/5.0 rating</li>
         <li><%= pluralize(plugin.versions.length, "version") %></li>
         <li><%= format_date plugin.created_at %></li>
       </ul>

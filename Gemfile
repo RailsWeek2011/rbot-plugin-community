@@ -17,6 +17,9 @@ gem 'jquery-rails'
 # use devise for user authentication
 gem 'devise'
 
+# to use markdown markup in comments, descriptions, etc.
+gem 'formatize'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
