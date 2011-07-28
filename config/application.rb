@@ -45,7 +45,7 @@ module RbotPluginCommunity
 
     # For bot notifications:
     config.rbot_channel = ''
-    config.rbot_password = ''
+    config.rbot_username = ''
     config.rbot_password = ''
   end
 end
