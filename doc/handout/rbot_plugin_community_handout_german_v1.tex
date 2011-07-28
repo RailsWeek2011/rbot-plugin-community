@@ -1,0 +1,86 @@
+\documentclass[pdftex,11pt,a4paper,notitlepage]{report}
+\usepackage{fullpage}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage[pdftex]{graphicx}
+\usepackage[ngerman]{babel}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\HRuleThin}{\rule{\linewidth}{0.1mm}}
+\author{Matthias Hecker}
+\pagestyle{empty}
+\begin{document}
+
+% Header
+\begin{center}
+{ \large \bfseries Rails Weeks 2011}\\[0.4cm]
+{ \huge \bfseries Rbot Plugin Community}\\[0.1cm]
+\HRule \\[0.0cm]
+\end{center}
+
+\begin{flushleft}
+
+\textbf{Autoren:}\hfill\parbox[t]{0.7\textwidth}{\raggedleft \today}
+
+Matthias Hecker
+
+Ivo Senner
+
+Philipp Promeuschel\\[0.3cm]
+
+\HRule \\[0.5cm]
+
+\end{flushleft}
+
+\begin{flushleft}
+\textbf{Was ist Rbot?}
+\end{flushleft}
+
+\textit{Rbot}\footnote{\url{http://ruby-rbot.org/}} ist ein IRC-Bot (\textit{Internet Relay Chat}), 
+vergleichbar mit dem bekannteren
+\textit{Eggdrop} und ebenfalls ein Freies Software Projekt (lizenziert unter der
+\textit{GPLv3}), allerdings vollständig in Ruby entwickelt. IRC-Bots verbinden sich
+wie gewöhnliche IRC Clients zum Netzwerk und stellen Chat Teilnehmern
+bestimmte Funktionen zur Verfügung wie das Übersetzen von Texten, das Lösen
+von Rechenaufgaben, das Anzeigen von Informationen aus Webseiten, die Benachrichtigung
+von bestimmten Ereignissen oder das Erfüllen von administrativen Aufgaben.
+
+\begin{flushleft}
+\textbf{Projektidee}
+\end{flushleft}
+
+Der Bot kann sehr einfach durch kurze in Ruby geschriebene Plugins erweitert werden,
+seit 2006 existiert eine Webseite\footnote{\url{http://rbot.noway.ratry.ru/}} zum zentralen 
+veröffentlichen dieser Plugins.
+Leider ist die Entwicklung dieser Webseite seitdem stehengeblieben, und es fehlen
+einige Wünschenswerte Funktionen. Unsere Idee ist eine Neuentwicklung einer Community 
+zwischen Rbot Plugin Autoren und Benutzern. Die Rails 3.1 Anwendung wird
+unter der GPLv3 lizenziert auf Github 
+veröffentlicht\footnote{\url{https://github.com/RailsWeek2011/rbot-plugin-community}\\
+    Testinstallation: \url{http://rbot-plugins.sixserv.org/}}. 
+Es ist geplant,
+nachdem die Software stabil genug arbeitet, die alte Webseite zu ersetzen und alle
+existierenden Plugins zu migrieren.
+
+\begin{flushleft}
+\textbf{Funktionalität}
+\end{flushleft}
+
+\begin{itemize}
+\item Benutzerverwaltung \\
+(Registrieren, Login, Logout, Passwort Zurücksetzen, Passwort/Email Ändern, Benutzer Löschen)
+\item Plugins \\
+(Auflisten, Durchsuchen, Erstellen, Ändern, Löschen)
+\item Versionen/Dateien \\
+(Hochladen, Ändern, Löschen)
+\item Bewertungen \\
+(Plugins Bewerten von 1 bis 5)
+\item Kommentare \\
+(Kommentieren von Plugins, Schutz vor Spam per \textit{Akismet\footnote{\url{http://akismet.com/}}})
+\item Feeds
+\item 
+\end{itemize}
+
+\end{document}
