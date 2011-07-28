@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110728204142) do
+ActiveRecord::Schema.define(:version => 20110728213544) do
 
   create_table "comments", :force => true do |t|
     t.integer  "plugin_id"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20110728204142) do
     t.string   "username"
     t.string   "fullname"
     t.boolean  "opt_in"
+    t.boolean  "is_admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
