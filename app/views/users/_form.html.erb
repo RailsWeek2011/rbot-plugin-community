@@ -16,7 +16,9 @@
 
   <p><%= f.label :homepage %>
   <%= f.text_field :homepage %></p>
-
+   <p><%= f.label :opt_in %> (Do you want to get notified via email?)<%= :opt_in? %>
+   <%= f.check_box :opt_in, :checked => :opt_in %></p>
+   <%= check_box_tag "user[opt_in]", @user.opt_in? %>
   <div class="actions">
     <%= f.submit %>
   </div>

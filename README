@@ -47,6 +47,13 @@ Nice to have:
 - test cases fuer alles
 - Notification Center (Einstellen der Benachrichtigungen)
 
+Todo:
+- suche                                                                                                                                                            
+- following plugins
+- import von plugins via git/svn/github                                                                                                                            
+- custom error pages
+- check password strength
+
 Notes:
 ======
 
