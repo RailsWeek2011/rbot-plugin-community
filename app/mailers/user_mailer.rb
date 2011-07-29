@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "rbot-plugins@sixserv.org"
 
   def new_notification(user,model)
     if model.class == Plugin
