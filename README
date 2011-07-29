@@ -117,3 +117,10 @@ cd rbot-plugin-community/
 bundle install
 rake db:setup
 
+Run
+---
+Don't forget to start the worker (for asynchron email/irc notifications)
+rake jobs:work
+
+Hint for stopping spam:
+rake jobs:clear
