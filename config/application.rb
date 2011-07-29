@@ -51,6 +51,9 @@ module RbotPluginCommunity
 
     # configuration for observers
     config.active_record.observers = :notification_observer
-
+    
+    # config for host/path
+    config.host = ''
+    config.path = ''
   end
 end
