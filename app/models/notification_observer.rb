@@ -38,10 +38,10 @@ class NotificationObserver < ActiveRecord::Observer
   self.delay.irc(msg)
   end
 
-  # maybe interesting for later use...
-  def after_update
-    if model.class == Plugin
-      print "edited"
-    end
-  end
+  # maybe interesting for later use... STUB
+  #def after_update
+  #  if model.class == Plugin
+  #    print "edited"
+  #  end
+  #end
 end
