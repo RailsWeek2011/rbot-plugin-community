@@ -26,7 +26,7 @@ class NotificationObserver < ActiveRecord::Observer
     msg = msg + " notification sent to: "
     @users = User.all
     @users.each do |user|
-      UserMailer.new_notification(user,model)
+      #UserMailer.new_notification(user,model)
       # Planed for future releases: Userdefined Abonements:  if user.abos.each abo.id => plugin.id...:
       if user.opt_in == nil
         print "is nil" # just for testing
