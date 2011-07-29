@@ -69,9 +69,13 @@ class CommentsController < ApplicationController
   end
 
   def approve
-    @comment = Comment.find(params[:id])
-    @comment.approved = true
-    @comment.save
+    comment = Comment.find(params[:id])
+    comment.approved = true
+    comment.save
+    respond_to do |format|
+      format.html { redirect_to comment.plugin, notice: 'Comment approved.' }
+      format.json { head :ok }
+    end
   end
 
   # DELETE /comments/1
