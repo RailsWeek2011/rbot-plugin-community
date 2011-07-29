@@ -7,13 +7,18 @@
     <h1>Hi, <%= @user.name %></h1>
     <p>
       A plugin you watch has just been updated:
-      <% @plugin.name %>
+      <% @plugin.name %> has been updated to <% @version.version %>
       <br/>
     </p>
     <p>
       just follow this link: <%= @url %>.
     </p>
-    <p>have a great day!</p>
+    <p>
+      Have a great day!</br></br>
+      </br>
+      If you don't want to receive further notifications just unfollow the plugin or</br>
+      go to your account settings and opt-out for email notifications.</br>
+    </p>
   </body>
 </html>
 

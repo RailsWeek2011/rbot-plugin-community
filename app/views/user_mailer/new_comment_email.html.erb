@@ -4,12 +4,18 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <h1>Hey, <%= @user.name %></h1>
+    <h1>Hey <%= @user.name %>,</h1>
     <p>
-      A new comment has been added to <%= @plugin.name %>.<br/>
+      A new comment has been added to <%= @plugin.name %> by  <%= @comment.user.username %><br/>
     </p>
     <p>
-      To see the comment, just follow this link: <%= @url %>.
+      To see the comment, just follow this link: <%= @url %>.</br>
+    </p>
+    <p>
+      Have a great day!</br></br>
+      </br>
+      If you don't want to receive further notifications just unfollow the plugin or</br>
+      go to your account settings and opt-out for email notifications.</br>
     </p>
   </body>
 </html>

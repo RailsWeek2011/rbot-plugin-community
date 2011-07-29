@@ -17,22 +17,24 @@ class UserMailer < ActionMailer::Base
     @user = user
     @url = plugin_url(model)
     mail(:to => user.email,
-         :subject => "a new plugin has been added")
+         :subject => "[rbot-plugin-community] A new plugin has been added ["+@plugin.name+"]")
   end
 
-  # below @plugin has to be changed something appropriate
   def new_comment(user,model)
     @user = user
     @plugin =  Plugin.find(model.plugin_id)
     @url = plugin_url(@plugin)
+    @comment = model
     mail(:to => user.email,
-         :subject => "a plugin u watch has been commented")
+         :subject => "[rbot-plugin-community] A plugin you watch has been commented ["+@plugin.name+"]")
   end
+
   def new_version(user,model)
     @user = user
     @plugin =  Plugin.find(model.plugin_id)
     @url = plugin_url(@plugin)
+    @version = model
     mail(:to => user.email,
-         :subject => "a plugin u watch has been updated")
+         :subject => "[rbot-plugin-community A plugin you watch has been updated ["+@plugin.name+"]")
   end
 end
