@@ -113,7 +113,7 @@ class PluginsController < ApplicationController
     @plugin.destroy
 
     respond_to do |format|
-      format.html { redirect_to plugins_url }
+      format.html { redirect_to plugins_url, notice: 'Plugin deleted!' }
       format.json { head :ok }
     end
   end
@@ -123,7 +123,7 @@ class PluginsController < ApplicationController
   # ensure users only update/destroy their own plugins!
   def owned_by_user!
     plugin = Plugin.find params[:id]
-    if not current_user == plugin.user # and not is_admin?
+    if not current_user == plugin.user and not is_admin?
       respond_to do |format|
         format.html { redirect_to plugins_path, alert: 'You do not own this plugin!' }
         format.json { render json: {:status => :unauthorized } }

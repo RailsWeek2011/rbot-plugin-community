@@ -13,7 +13,7 @@ module ApplicationHelper
   end
 
   def current_user_owns?(model)
-    if model.respond_to? :user and current_user == model.user
+    if (model.respond_to? :user and current_user == model.user) or is_admin?
       true
     else
       false
