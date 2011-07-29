@@ -14,8 +14,10 @@ class Comment < ActiveRecord::Base
 
   before_create :check_for_spam
   def check_for_spam
-    if not Rails.application.config.rakismet.empty?
+    if not Rails.application.config.rakismet[:key].empty?
       self.approved = !spam?
+    else
+      self.approved = true
     end
     true # continue save
   end
