@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
          :validatable # validate email and password
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :username, :fullname, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :username, :fullname, :homepage, :email, :password, :password_confirmation, :remember_me
 
   has_many :plugins
   has_many :comments
