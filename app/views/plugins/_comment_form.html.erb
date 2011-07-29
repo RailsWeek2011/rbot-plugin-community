@@ -13,10 +13,10 @@
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :value => (user_signed_in? ? current_user.username : '') %>
   </div>
   <div class="field">
-    <%= f.label :email %>
+    <%= f.label :email, :value => (user_signed_in? ? current_user.email : '') %>
     <%= f.text_field :email %>
   </div>
   <div class="field">

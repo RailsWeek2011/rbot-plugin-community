@@ -8,7 +8,11 @@ RbotPluginCommunity::Application.routes.draw do
         put 'current' => 'plugins#current_version'
       end
     end
-    resources :comments
+    resources :comments do 
+      member do
+        put 'approve'  => 'comments#approve'
+      end
+    end
 
     member do 
       post 'rate' => 'ratings#rate'

@@ -3,6 +3,9 @@
     list-style: none outside none;
     margin: 0;
     padding: 0;
+    .not_approved {
+        color: lightred;
+    }
     li {
         margin: 8px 0 0 27px;
         position: relative;

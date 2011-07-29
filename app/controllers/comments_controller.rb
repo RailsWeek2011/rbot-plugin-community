@@ -68,6 +68,12 @@ class CommentsController < ApplicationController
     end
   end
 
+  def approve
+    @comment = Comment.find(params[:id])
+    @comment.approved = true
+    @comment.save
+  end
+
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
