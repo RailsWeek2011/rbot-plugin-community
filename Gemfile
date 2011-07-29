@@ -14,6 +14,10 @@ gem 'uglifier'
 
 gem 'jquery-rails'
 
+# for background jobs
+gem 'delayed_job'
+
+
 # use devise for user authentication
 gem 'devise'
 

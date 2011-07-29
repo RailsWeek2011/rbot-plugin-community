@@ -44,9 +44,17 @@ module RbotPluginCommunity
     config.rakismet.url = ''
 
     # For bot notifications:
-    config.rbot_url = ''
-    config.rbot_channel = ''
-    config.rbot_username = ''
-    config.rbot_password = ''
+    #config.rbot_url = ''
+    #config.rbot_channel = ''
+    #config.rbot_username = ''
+    #config.rbot_password = ''
+    config.rbot_url = 'druby://ip.apoc.cc:7268'                                                                                                     
+    config.rbot_channel = '#rbot-plugins'                                                                                                         
+    config.rbot_username = 'webapp'    
+    config.rbot_password = 'lint8' 
+
+
+    config.active_record.observers = :notification_observer
+
   end
 end
